@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surgical Procedures | Dr. Ben Sim</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Feather Icons (match final home screen) -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- Fonts (match final home screen) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Tailwind config (match final home screen) -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              forest: {
+                700:"#0f2d0a",
+                800:"#0b2107",
+                900:"#071805"
+              },
+              peach: {
+                200:"#ffd5b5",
+                300:"#ffc39e",
+                500:"#e28d5b"
+              }
+            }
+          }
+        }
+      }
+    </script>
+
+    <style>
+      body { font-family: "Playfair Display", serif; }
+    </style>
+</head>
+
+<body class="bg-forest-500 text-white font-sans antialiased">
+
+    <!-- NAV BAR (COPIED FROM FINAL HOME SCREEN) -->
+    <header class="sticky top-0 z-50 bg-forest-800/85 backdrop-blur border-b border-white/10">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+
+        <div class="leading-tight">
+          <span class="block font-semibold text-lg">Dr. Ben Sim</span>
+          <span class="block text-xs uppercase tracking-wider text-white/70">
+            Ophthalmologist
+          </span>
+        </div>
+
+        <!-- Navigation (same font size for all items) -->
+      <nav class="hidden md:flex items-center gap-8 font-medium text-white/80 text-base">
+        <a href="index.html #about" class="hover:text-white transition">About</a>
+        <a href="surgery.html" class="hover:text-white transition">Surgery</a>
+        <a href="globalhealth.html" class="hover:text-white transition">Global Health</a>
+        <a href="location.html" class="hover:text-white transition">Contact</a>
+      </nav>
+
+        <!-- CTA -->
+        <a href="contact.html"
+           class="rounded-lg bg-peach-300 text-forest-900 font-bold px-5 py-2.5 hover:bg-peach-200 transition">
+          Book an appointment
+        </a>
+      </div>
+    </header>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-cover bg-center text-white relative"
+             style="background-image: url('https://images.unsplash.com/photo-1475359524104-d101d02a042b?q=80&w=1594&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+
+        <!-- Overlay for contrast -->
+        <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <h2 class="text-4xl font-bold text-center mb-16">
+                Surgical and Clinical Procedures
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Service Card 1 -->
+                <div class="service-card bg-black p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-t-4 border-peach-500">
+                    <div class="mb-6 rounded-lg overflow-hidden">
+                        <img
+                            src="https://res.cloudinary.com/dwjffubk2/image/upload/q_auto,f_auto/Nuclear_Sclerosis_gy9hfb.png"
+                            alt="Cataract Surgery"
+                            class="w-full h-40 md:h-56 object-cover">
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 text-center">
+                        Cataract Surgery
+                    </h3>
+                    <p class="text-white-700 text-center">
+                        State-of-the-art cataract extraction technique with placement of a mono- or multifocal intraocular lens.
+                    </p>
+                </div>
+
+                <!-- Additional service cards (unchanged) -->
+                <div class="service-card bg-black p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-t-4 border-peach-500">
+                    <div class="mb-6 rounded-lg overflow-hidden">
+                        <img
+                            src="https://res.cloudinary.com/dwjffubk2/image/upload/v1766307976/Pterygium_bnuprs.jpg"
+                            alt="Pterygium"
+                            class="w-full h-40 md:h-56 object-cover">
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 text-center">
+                        Pterygium & OSSN
+                    </h3>
+                    <p class="text-white-700 text-center">
+                        Pterygium surgery with tissue glue to maximise post-operative comfort and improved healing time.
+                    </p>
+                    <p class="text-white-700 text-center">
+                        Surgical treatment for ocular surface squamous cell neoplasia (OSSN) also offered.
+                    </p>
+                </div>
+
+                <div class="service-card bg-black p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-t-4 border-peach-500">
+                    <div class="mb-6 rounded-lg overflow-hidden">
+                        <img
+                            src="https://res.cloudinary.com/dwjffubk2/image/upload/v1766307972/Glaucoma_jnss1x.jpg"
+                            alt="Glaucoma"
+                            class="w-full h-40 md:h-56 object-cover">
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 text-center">
+                        Glaucoma
+                    </h3>
+                    <p class="text-white-700 text-center">
+                        Glaucoma monitoring and treatment.
+                    </p>
+                    <p class="text-white-700 text-center">
+                    .   
+                    </p>
+                    <p class="text-white-700 text-center">
+                     Treatment with intraocular pressure lowering lasers (SLT, laser peripheral iridotomy) and minimally invasive glaucoma surgery (MIGS).
+                    </p>
+                </div>
+
+                <div class="service-card bg-black p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-t-4 border-peach-500">
+                    <div class="mb-6 rounded-lg overflow-hidden">
+                        <img
+                            src="https://res.cloudinary.com/dwjffubk2/image/upload/v1766307972/Macular_Degeneration_ojz0kl.jpg"
+                            alt="Macular Degeneration"
+                            class="w-full h-40 md:h-56 object-cover">
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 text-center">
+                        Age-Related Macular Degeneration (AMD)
+                    </h3>
+                    <p class="text-white-700 text-center">
+                        Intravitreal injection for Wet AMD and Advanced Geographic Atrophy.
+                    </p>
+                </div>
+
+                <div class="service-card bg-black p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-t-4 border-peach-500">
+                    <div class="mb-6 rounded-lg overflow-hidden">
+                        <img
+                            src="https://res.cloudinary.com/dwjffubk2/image/upload/v1766307971/DME_o5fviw.png"
+                            alt="Diabetic Eye disease"
+                            class="w-full h-40 md:h-56 object-cover">
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 text-center">
+                        Diabetic Eye disease
+                    </h3>
+                    <p class="text-white-700 text-center">
+                        Intravitreal injections and retinal laser to target complications of diabetic retinopathy and maculopathy.
+                    </p>
+                </div>
+
+                <div class="service-card bg-black p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-t-4 border-peach-500">
+                    <div class="mb-6 rounded-lg overflow-hidden">
+                        <img
+                            src="https://res.cloudinary.com/dwjffubk2/image/upload/v1766307974/Vein_Occlusion_rolo5g.jpg"
+                            alt="Retinal Vein Occlusion"
+                            class="w-full h-40 md:h-56 object-cover">
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 text-center">
+                        Retinal Vein Occlusion
+                    </h3>
+                    <p class="text-white-700 text-center">
+                        Intravitreal injection for macular oedema following Retinal Vein Occlusions.
+                    </p>
+                </div>
+
+                <div class="service-card bg-black p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-t-4 border-peach-500">
+                    <div class="mb-6 rounded-lg overflow-hidden">
+                        <img
+                            src="https://res.cloudinary.com/dwjffubk2/image/upload/v1766307973/Skin_Cancer_eoczlw.png"
+                            alt="Periocular Skin Cancer"
+                            class="w-full h-40 md:h-56 object-cover">
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 text-center">
+                        Periocular skin Cancer excision and reconstruction
+                    </h3>
+                    <p class="text-white-700 text-center">
+                        Subspecialized surgical care for excision of benign and malignant periocular skin lesions with emphasis on cancer clearance and optimal postoperative cosmesis.
+                    </p>
+                </div>
+
+                <div class="service-card bg-black p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-t-4 border-peach-500">
+                    <div class="mb-6 rounded-lg overflow-hidden">
+                        <img
+                            src="https://res.cloudinary.com/dwjffubk2/image/upload/v1766307971/Ectropion_xwrcky.jpg"
+                            alt="Ectropion & Entropion Repair"
+                            class="w-full h-40 md:h-56 object-cover">
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 text-center">
+                        Eyelid malposition repair
+                    </h3>
+                    <p class="text-white-700 text-center">
+                        Surgical treatment for Ectropion / Entropion from age-related changes/sun damage/facial nerve palsy/scar retraction.
+                    </p>
+                    <p class="text-white-700 text-center">
+                    .
+                    </p>
+                    <p class="text-white-700 text-center">
+                        Upper eyelid blepharoplasty and ptosis repair also offered.
+                    </p>
+                </div>
+
+                <div class="service-card bg-black p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-t-4 border-peach-500">
+                    <div class="mb-6 rounded-lg overflow-hidden">
+                        <img
+                            src="https://res.cloudinary.com/dwjffubk2/image/upload/v1766308197/Hemifacial_spasms_znhnnv.png"
+                            alt="Botox for Facial Spasms"
+                            class="w-full h-40 md:h-56 object-cover">
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 text-center">
+                        Botox for Facial Spasms
+                    </h3>
+                    <p class="text-white-700 text-center">
+                        Neuromodulatory drugs for Hemifacial Spasm and Essential Blepharospasm.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER (COPIED FROM FINAL HOME SCREEN) -->
+    <section id="footer" class="w-full bg-black text-peach-300">
+      <div class="max-w-7xl mx-auto px-6 py-14">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-14">
+
+          <div>
+            <h3 class="font-bold mb-4">LOCATIONS</h3>
+            <ul class="space-y-1">
+              <li>Warners Bay</li>
+              <li>Maitland</li>
+              <li>Charlestown</li>
+              <li>Hamilton</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="font-bold mb-4">APPOINTMENTS</h3>
+            <p class="max-w-sm">
+              You may book an appointment with Dr Sim by calling a location convenient to you.
+            </p>
+
+            <a href="location.html"
+               class="inline-block mt-4 rounded-lg bg-peach-300 text-forest-900 font-bold px-6 py-3 hover:bg-peach-200 transition">
+              Book an appointment ›
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    <div class="border-t border-peach-300/30">
+      <div class="max-w-7xl mx-auto px-6 py-4 text-sm text-peach-300/80">
+        © <span id="footerYear"></span> Dr Ben Sim |
+        <a href="privacypolicy.html" class="hover:underline">Privacy Policy</a> |
+        <a href="disclaimer.html" class="hover:underline">Disclaimer</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    feather.replace();
+    document.getElementById("footerYear").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

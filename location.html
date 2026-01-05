@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact</title>
+
+  <!-- Tailwind (for navbar/footer styling consistency) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Feather Icons -->
+  <script src="https://unpkg.com/feather-icons"></script>
+
+  <!-- Fonts (keep Montserrat for this page + Playfair for site consistency) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind theme from FINAL home screen -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            forest: {
+              700:"#0f2d0a",
+              800:"#0b2107",
+              900:"#071805"
+            },
+            peach: {
+              200:"#ffd5b5",
+              300:"#ffc39e",
+              500:"#e28d5b"
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root{
+      --forest:#1a4314;
+      --forest-dark:#071805;
+      --forest-soft:#e6efe9; /* pale forest green */
+      --brown:#8B5A2B;
+      --line:rgba(0,0,0,0.12);
+
+      /* Controls how strong the seam-blend is */
+      --blend-height: 90px; /* increase for longer blend */
+    }
+
+    *{box-sizing:border-box;}
+    body{
+      margin:0;
+      font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      line-height:1.65;
+      color:#111;
+      background:#fff;
+    }
+
+    /* ========= CONTACT TOP IMAGE SECTION ========= */
+    .contact-hero{
+      width:100%;
+      padding:64px 18px 54px;
+      position:relative;
+      background-image: url("https://images.unsplash.com/photo-1760283830747-dba3139d775e?q=80&w=1371&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+      background-size:cover;
+      background-position:center;
+      background-repeat:no-repeat;
+      color:#fff;
+      overflow:hidden;
+    }
+    /* base dark overlay for readability */
+    .contact-hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: rgba(0,0,0,0.52);
+      z-index:0;
+    }
+    /* bottom blend overlay to transition into next section */
+    .contact-hero::after{
+      content:"";
+      position:absolute;
+      left:0; right:0;
+      bottom:-1px;
+      height: var(--blend-height);
+      z-index:1;
+      /* fade into the darker tones that start section 2 */
+      background: linear-gradient(
+        to bottom,
+        rgba(4,16,3,0.00) 0%,
+        rgba(4,16,3,0.45) 55%,
+        rgba(4,16,3,0.92) 100%
+      );
+      pointer-events:none;
+    }
+
+    .contact-hero-content{
+      position:relative;
+      max-width:1080px;
+      margin:auto;
+      z-index:2;
+    }
+    .contact-hero h1{
+      font-size:2.8rem;
+      margin:0 0 14px;
+      letter-spacing:-0.3px;
+    }
+    .contact-hero .intro{
+      max-width:820px;
+      font-size:1.05rem;
+      color:#f3f3f3;
+    }
+    .contact-hero .intro p{ margin:0 0 14px; }
+
+    /* ========= CONTACTS LIST WITH BACKGROUND IMAGE ========= */
+    .contacts-bg{
+      width:100%;
+      padding:64px 18px;
+      position:relative;
+      overflow:hidden;
+
+      /* Slight overlap upward so the blend feels seamless */
+      margin-top: calc(var(--blend-height) * -0.35);
+
+      background-image:url("https://images.unsplash.com/photo-1627687579653-1a7eacb78c82?q=80&w=709&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+      background-size:cover;
+      background-position:75% center;
+      background-repeat:no-repeat;
+    }
+    /* main overlay */
+    .contacts-bg::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(
+          to right,
+          rgba(4,16,3,0.94) 0%,
+          rgba(4,16,3,0.86) 33%,
+          rgba(4,16,3,0.62) 55%,
+          rgba(4,16,3,0.36) 75%,
+          rgba(4,16,3,0.22) 100%
+        );
+      z-index:0;
+    }
+    /* top blend overlay to meet section 1 */
+    .contacts-bg::after{
+      content:"";
+      position:absolute;
+      left:0; right:0;
+      top:0;
+      height: var(--blend-height);
+      z-index:1;
+      background: linear-gradient(
+        to bottom,
+        rgba(4,16,3,0.92) 0%,
+        rgba(4,16,3,0.55) 45%,
+        rgba(4,16,3,0.00) 100%
+      );
+      pointer-events:none;
+    }
+
+    .contact-inner{
+      position:relative;
+      max-width:1080px;
+      margin:auto;
+      color:#fff;
+      z-index:2;
+    }
+    h2{
+      font-size:1.5rem;
+      margin:0 0 22px;
+      color:#fff;
+    }
+    .contact-list{ max-width:540px; }
+    .contact-card{
+      padding:18px 0;
+      border-bottom:1px solid rgba(255,255,255,0.35);
+    }
+    .contact-card:last-child{ border-bottom:none; }
+    .contact-card strong{
+      display:block;
+      font-size:1.1rem;
+      margin-bottom:6px;
+    }
+    .contact-card .address{
+      color:#eef3f0;
+      margin-bottom:8px;
+      line-height:1.55;
+    }
+    .contact-card .meta{
+      color:#dde6e1;
+      font-weight:500;
+    }
+    .contact-card a{
+      color:#fff;
+      font-weight:700;
+      text-decoration:none;
+    }
+    .contact-card a:hover{ opacity:0.85; }
+
+    /* ========= MAP & FLOATING CLINICS BAR ========= */
+    .map-shell{
+      position:relative;
+      width:100vw;
+      margin-left:calc(50% - 50vw);
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+      background:#e9edf1;
+      overflow:hidden;
+    }
+    .map-shell iframe{
+      width:100%;
+      height:560px;
+      border:0;
+      display:block;
+    }
+
+    .map-panel{
+      position:absolute;
+      top:16px;
+      right:16px;
+      width:320px;
+      background:var(--forest-soft);
+      border-radius:12px;
+      padding:16px;
+      box-shadow:0 12px 30px rgba(7,24,5,0.20);
+      border:1px solid rgba(26,67,20,0.25);
+      z-index:5;
+    }
+    .map-panel .title{
+      font-size:1.15rem;
+      font-weight:900;
+      letter-spacing:1px;
+      color:var(--forest-dark);
+      margin-bottom:14px;
+    }
+    .clinic-btn{
+      width:100%;
+      text-align:left;
+      background:rgba(255,255,255,0.38);
+      border:1px solid rgba(26,67,20,0.16);
+      padding:12px 14px;
+      border-radius:10px;
+      cursor:pointer;
+      font-weight:800;
+      font-size:1.05rem;
+      color:var(--forest-dark);
+      margin-bottom:10px;
+      line-height:1.35;
+    }
+    .clinic-btn small{
+      display:block;
+      font-weight:650;
+      font-size:0.95rem;
+      color:#3f6b57;
+      margin-top:4px;
+    }
+    .clinic-btn:hover{ background:rgba(255,255,255,0.60); }
+    .clinic-btn.active{
+      background:rgba(139,90,43,0.20);
+      outline:1px solid rgba(139,90,43,0.40);
+    }
+
+    @media(max-width:900px){
+      .map-shell iframe{ height:420px; }
+      .map-panel{ width:260px; padding:14px; top:12px; right:12px; }
+
+      /* On mobile, a vertical blend reads better */
+      .contact-hero::after{
+        height: calc(var(--blend-height) * 0.9);
+      }
+      .contacts-bg{
+        margin-top: calc(var(--blend-height) * -0.25);
+        background-position:65% center;
+      }
+      .contacts-bg::before{
+        background:
+          linear-gradient(
+            to bottom,
+            rgba(4,16,3,0.94) 0%,
+            rgba(4,16,3,0.82) 45%,
+            rgba(4,16,3,0.50) 75%,
+            rgba(4,16,3,0.22) 100%
+          );
+      }
+      .contacts-bg::after{
+        height: calc(var(--blend-height) * 0.9);
+        background: linear-gradient(
+          to bottom,
+          rgba(4,16,3,0.92) 0%,
+          rgba(4,16,3,0.55) 45%,
+          rgba(4,16,3,0.00) 100%
+        );
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV BAR (COPIED FROM FINAL HOME SCREEN) -->
+  <header class="sticky top-0 z-50 bg-forest-800/85 backdrop-blur border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+
+      <div class="leading-tight" style="font-family:'Playfair Display', serif;">
+        <span class="block font-semibold text-lg text-white">Dr. Ben Sim</span>
+        <span class="block text-xs uppercase tracking-wider text-white/70">
+          Ophthalmologist
+        </span>
+      </div>
+
+      <nav class="hidden md:flex items-center gap-8 font-medium text-white/80 text-base">
+        <a href="index.html #about" class="hover:text-white transition">About</a>
+        <a href="surgery.html" class="hover:text-white transition">Surgery</a>
+        <a href="globalhealth.html" class="hover:text-white transition">Global Health</a>
+        <a href="location.html" class="hover:text-white transition">Contact</a>
+      </nav>
+
+      <a href="#footer"
+         class="rounded-lg bg-peach-300 text-forest-900 font-bold px-5 py-2.5 hover:bg-peach-200 transition"
+         style="font-family:'Playfair Display', serif;">
+        Book an appointment
+      </a>
+    </div>
+  </header>
+
+  <!-- CONTACT SECTION WITH IMAGE BACKGROUND -->
+  <section class="contact-hero" aria-label="Contact information">
+    <div class="contact-hero-content">
+      <h1>Contact</h1>
+
+      <div class="intro">
+        <p>
+          Private consultations can be made with Dr Ben Sim by calling one of the locations below.
+        </p>
+        <p>
+          For public consultations please send your referral to the John Hunter Hospital Ophthalmology Clinic. Dr Ben Sim also operates on public patients at Kurri Kurri District hospital and Belmont Hospital which are teaching hospitals. While patients are not guaranteed a choice on their hospital location or the specific surgeon performing their procedure of their choice, all surgeries are conducted with utmost professionalism within a supervised training environment.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTS SECTION WITH IMAGE BACKGROUND -->
+  <section class="contacts-bg" aria-label="Clinic contact details">
+    <div class="contact-inner">
+
+      <div class="contact-list">
+        <!-- 1) Warners Bay -->
+        <div class="contact-card">
+          <strong>Warners Bay – Ophthalmic Associates</strong>
+          <div class="address">Shop 6, Bayway Centre, 34 John Street, Warners Bay NSW 2282</div>
+          <div class="meta">
+            <a href="tel:0240034881">02 4003 4881</a><br>
+            <a href="mailto:info@ophthalmicassociates.com.au">info@ophthalmicassociates.com.au</a>
+          </div>
+        </div>
+
+        <!-- 2) Maitland -->
+        <div class="contact-card">
+          <strong>Maitland – Ophthalmic Associates</strong>
+          <div class="address">106 Victoria St, East Maitland NSW 2323</div>
+          <div class="meta">
+            <a href="tel:0240034881">02 4003 4881</a><br>
+            <a href="mailto:info@ophthalmicassociates.com.au">info@ophthalmicassociates.com.au</a>
+          </div>
+        </div>
+
+        <!-- 3) Charlestown -->
+        <div class="contact-card">
+          <strong>Charlestown – Charlestown Eye Centre</strong>
+          <div class="address">12 Smith St, Charlestown NSW 2290</div>
+          <div class="meta">
+            <a href="tel:0249433199">(02) 4943 3199</a><br>
+            <a href="mailto:charlestowneyecentre@gmail.com">charlestowneyecentre@gmail.com</a>
+          </div>
+        </div>
+
+        <!-- 4) Hamilton -->
+        <div class="contact-card">
+          <strong>Hamilton – Care Foresight Pty Ltd</strong>
+          <div class="address">59 Cleary St, Hamilton NSW 2303</div>
+          <div class="meta">
+            <a href="tel:0249624962">(02) 4962 4962</a><br>
+            <a href="mailto:reception@drsdunlop.com.au">reception@drsdunlop.com.au</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP -->
+  <section class="map-shell" aria-label="Map of clinic locations">
+    <iframe
+      id="mapFrame"
+      loading="lazy"
+      allowfullscreen
+      referrerpolicy="no-referrer-when-downgrade"
+      src="https://www.google.com/maps?q=Shop%206,%20Bayway%20Centre,%2034%20John%20Street,%20Warners%20Bay%20NSW%202282&output=embed">
+    </iframe>
+
+    <div class="map-panel" role="navigation" aria-label="Clinics">
+      <div class="title">CLINICS</div>
+
+      <button class="clinic-btn active" type="button"
+        onclick="setMap('Shop 6, Bayway Centre, 34 John Street, Warners Bay NSW 2282', this)">
+        Warners Bay
+        <small>Ophthalmic Associates</small>
+      </button>
+
+      <button class="clinic-btn" type="button"
+        onclick="setMap('106 Victoria St, East Maitland NSW 2323', this)">
+        Maitland
+        <small>Ophthalmic Associates</small>
+      </button>
+
+      <button class="clinic-btn" type="button"
+        onclick="setMap('12 Smith St, Charlestown NSW 2290', this)">
+        Charlestown
+        <small>Charlestown Eye Centre</small>
+      </button>
+
+      <button class="clinic-btn" type="button"
+        onclick="setMap('59 Cleary St, Hamilton NSW 2303', this)">
+        Hamilton
+        <small>Care Foresight Pty Ltd</small>
+      </button>
+    </div>
+  </section>
+
+  <!-- FOOTER (COPIED FROM FINAL HOME SCREEN) -->
+  <section id="footer" class="w-full bg-black text-peach-300">
+    <div class="max-w-7xl mx-auto px-6 py-14">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-14">
+
+        <div>
+          <h3 class="font-bold mb-4">LOCATIONS</h3>
+          <ul class="space-y-1">
+            <li>Warners Bay</li>
+            <li>Maitland</li>
+            <li>Charlestown</li>
+            <li>Hamilton</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="font-bold mb-4">APPOINTMENTS</h3>
+          <p class="max-w-sm">
+            You may book an appointment with Dr Sim by calling a location convenient to you.
+          </p>
+
+          <a href="location.html"
+             class="inline-block mt-4 rounded-lg bg-peach-300 text-forest-900 font-bold px-6 py-3 hover:bg-peach-200 transition">
+            Book an appointment ›
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="border-t border-peach-300/30">
+      <div class="max-w-7xl mx-auto px-6 py-4 text-sm text-peach-300/80">
+        © <span id="footerYear"></span> Dr Ben Sim |
+        <a href="privacypolicy.html" class="hover:underline">Privacy Policy</a> |
+        <a href="disclaimer.html" class="hover:underline">Disclaimer</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    feather.replace();
+    document.getElementById("footerYear").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
+
+
+

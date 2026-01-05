@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Disclaimer | Dr Ben Sim</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Feather Icons -->
+  <script src="https://unpkg.com/feather-icons"></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            forest: {
+              700:"#0f2d0a",
+              800:"#0b2107",
+              900:"#071805"
+            },
+            peach: {
+              200:"#ffd5b5",
+              300:"#ffc39e",
+              500:"#e28d5b"
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: "Playfair Display", serif; }
+  </style>
+</head>
+
+<body class="bg-forest-700 text-white antialiased">
+
+  <!-- NAV BAR (COPIED FROM HOME PAGE) -->
+  <header class="sticky top-0 z-50 bg-forest-800/85 backdrop-blur border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+
+      <div class="leading-tight">
+        <span class="block font-semibold text-lg">Dr. Ben Sim</span>
+        <span class="block text-xs uppercase tracking-wider text-white/70">
+          Ophthalmologist
+        </span>
+      </div>
+
+      <nav class="hidden md:flex items-center gap-8 font-medium text-white/80 text-base">
+        <a href="index.html #about" class="hover:text-white transition">About</a>
+        <a href="surgery.html" class="hover:text-white transition">Surgery</a>
+        <a href="globalhealth.html" class="hover:text-white transition">Global Health</a>
+        <a href="location.html" class="hover:text-white transition">Contact</a>
+      </nav>
+
+      <a href="contact.html"
+         class="rounded-lg bg-peach-300 text-forest-900 font-bold px-5 py-2.5 hover:bg-peach-200 transition">
+        Book an appointment
+      </a>
+    </div>
+  </header>
+
+  <!-- DISCLAIMER SECTION -->
+  <section class="py-20 bg-cover bg-center text-white relative"
+           style="background-image: url('https://images.unsplash.com/photo-1761574015823-f2e3d5133c0e?q=80&w=688&auto=format&fit=crop');">
+
+    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+
+    <div class="container mx-auto px-6 relative z-10">
+      <div class="max-w-4xl mx-auto">
+
+        <h1 class="text-4xl md:text-5xl font-bold mb-8">Website Disclaimer</h1>
+
+        <div class="prose prose-invert max-w-none">
+
+          <div class="bg-forest-800/60 p-8 rounded-lg mb-10 border border-forest-500">
+            <h2 class="text-2xl font-semibold mb-4">Important Information</h2>
+            <p>
+              The information provided on this website is for general informational purposes only and should not be considered medical advice.
+            </p>
+          </div>
+
+          <h2 class="text-2xl font-semibold mt-8 mb-4">Medical Disclaimer</h2>
+          <p>
+            The content of this website is not intended to be a substitute for professional medical advice, diagnosis, or treatment.
+            Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition.
+          </p>
+
+          <h2 class="text-2xl font-semibold mt-8 mb-4">No Doctor-Patient Relationship</h2>
+          <p>
+            Use of this website does not establish a doctor-patient relationship between you and Dr. Ben Sim or any associated medical professionals.
+          </p>
+
+          <h2 class="text-2xl font-semibold mt-8 mb-4">Accuracy of Information</h2>
+          <p>
+            While every effort is made to keep information accurate and current, no guarantees are made regarding completeness or reliability.
+          </p>
+
+          <h2 class="text-2xl font-semibold mt-8 mb-4">External Links</h2>
+          <p>
+            External links are provided for convenience only and do not constitute endorsement. Users are responsible for evaluating third-party content.
+          </p>
+
+          <h2 class="text-2xl font-semibold mt-8 mb-4">Copyright Notice</h2>
+          <p>
+            All content on this website is the property of Dr Ben Sim unless otherwise stated and is protected by copyright law.
+          </p>
+
+          <h2 class="text-2xl font-semibold mt-8 mb-4">Security</h2>
+          <p>
+            While reasonable steps are taken to maintain security, no liability is accepted for loss or damage arising from website use.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER (COPIED FROM HOME PAGE) -->
+  <section id="footer" class="w-full bg-black text-peach-300">
+    <div class="max-w-7xl mx-auto px-6 py-14">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-14">
+
+        <div>
+          <h3 class="font-bold mb-4">LOCATIONS</h3>
+          <ul class="space-y-1">
+            <li>Warners Bay</li>
+            <li>Maitland</li>
+            <li>Charlestown</li>
+            <li>Hamilton</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="font-bold mb-4">APPOINTMENTS</h3>
+          <p class="max-w-sm">
+            You may book an appointment with Dr Sim by calling a location convenient to you.
+          </p>
+
+          <a href="location.html"
+             class="inline-block mt-4 rounded-lg bg-peach-300 text-forest-900 font-bold px-6 py-3 hover:bg-peach-200 transition">
+            Book an appointment ›
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="border-t border-peach-300/30">
+      <div class="max-w-7xl mx-auto px-6 py-4 text-sm text-peach-300/80">
+        © <span id="footerYear"></span> Dr Ben Sim |
+        <a href="privacypolicy.html" class="hover:underline">Privacy Policy</a> |
+        <a href="disclaimer.html" class="hover:underline">Disclaimer</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    feather.replace();
+    document.getElementById("footerYear").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
+
+
+
