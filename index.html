@@ -60,15 +60,11 @@
     }
 
     /* Smooth background transition between sections */
-    .section-fade-bottom {
-      position: relative;
-    }
+    .section-fade-bottom { position: relative; }
     .section-fade-bottom::after {
       content: "";
       position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
+      left: 0; right: 0; bottom: 0;
       height: 140px;
       background: linear-gradient(
         to bottom,
@@ -78,15 +74,11 @@
       pointer-events: none;
     }
 
-    .section-fade-top {
-      position: relative;
-    }
+    .section-fade-top { position: relative; }
     .section-fade-top::before {
       content: "";
       position: absolute;
-      left: 0;
-      right: 0;
-      top: 0;
+      left: 0; right: 0; top: 0;
       height: 140px;
       background: linear-gradient(
         to top,
@@ -108,11 +100,8 @@
       max-width: 85%;
       max-height: 100%;
       object-fit: contain;
-
-      /* Less bright logos */
       filter: brightness(0.82) saturate(0.9) contrast(0.95);
       opacity: 0.92;
-
       transition: filter .25s ease, opacity .25s ease, transform .25s ease;
     }
     .logo-item img:hover {
@@ -126,25 +115,22 @@
 
     /* DESKTOP (>= 1024px): FORCE fixed logo column width + FORCE fixed logo box size + fixed equal gaps */
     @media (min-width: 1024px) {
-
-      /* Fixed column width so ALL logo left/right edges line up no matter screen size */
       .logos-desktop {
         display: flex;
         flex-direction: column;
-        align-items: center;        /* center the fixed-width boxes as a group */
+        align-items: center;
         justify-content: flex-start;
-        gap: 22px;                  /* equal spacing that does NOT change with viewport */
-        width: 360px !important;    /* fixed column width */
+        gap: 22px;
+        width: 360px !important;
         max-width: 360px !important;
         margin-left: auto;
         margin-right: auto;
         box-sizing: border-box;
       }
 
-      /* Each logo wrapper: fixed width + fixed height (so they all align perfectly) */
       .logos-desktop .logo-item {
-        width: 360px !important;    /* aligned left/right borders for every logo */
-        height: 112px !important;   /* uniform height */
+        width: 360px !important;
+        height: 112px !important;
         margin: 0 !important;
         display: flex;
         align-items: center;
@@ -152,7 +138,6 @@
         box-sizing: border-box;
       }
 
-      /* Each image: fill the same box; this prevents the FHF logo “blowing up” */
       .logos-desktop .logo-item img {
         width: 100% !important;
         height: 100% !important;
@@ -185,7 +170,6 @@
         min-width: 0;
       }
 
-      /* Uniform logo height on mobile */
       .mobile-logos img {
         height: 44px;
         width: 100%;
@@ -209,7 +193,7 @@
         </span>
       </div>
 
-      <!-- Navigation (same font size for all items) -->
+      <!-- Desktop Navigation -->
       <nav class="hidden md:flex items-center gap-8 font-medium text-white/80 text-base">
         <a href="#about" class="hover:text-white transition">About</a>
         <a href="surgery.html" class="hover:text-white transition">Surgery</a>
@@ -217,11 +201,43 @@
         <a href="location.html" class="hover:text-white transition">Contact</a>
       </nav>
 
-      <!-- CTA -->
-      <a href="#footer"
-         class="rounded-lg bg-peach-300 text-forest-900 font-bold px-5 py-2.5 hover:bg-peach-200 transition">
-        Book an appointment
-      </a>
+      <!-- Right side: CTA (desktop) + Hamburger (mobile) -->
+      <div class="flex items-center gap-3">
+        <!-- CTA (hide on mobile so header doesn't get cramped) -->
+        <a href="#footer"
+           class="hidden md:inline-flex rounded-lg bg-peach-300 text-forest-900 font-bold px-5 py-2.5 hover:bg-peach-200 transition">
+          Book an appointment
+        </a>
+
+        <!-- Hamburger (mobile) -->
+        <button
+          id="mobileMenuBtn"
+          class="md:hidden inline-flex items-center justify-center rounded-lg border border-white/15 bg-forest-900/25 px-3 py-2 hover:bg-forest-900/40 transition"
+          aria-label="Open menu"
+          aria-controls="mobileMenu"
+          aria-expanded="false"
+          type="button"
+        >
+          <i data-feather="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu (collapsible) -->
+    <div id="mobileMenu" class="md:hidden hidden border-t border-white/10 bg-forest-800/95">
+      <nav class="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-3 font-medium text-white/85 text-base">
+        <a href="#about" class="hover:text-white transition py-1">About</a>
+        <a href="surgery.html" class="hover:text-white transition py-1">Surgery</a>
+        <a href="globalhealth.html" class="hover:text-white transition py-1">Global Health</a>
+        <a href="location.html" class="hover:text-white transition py-1">Contact</a>
+
+        <div class="pt-2">
+          <a href="#footer"
+             class="inline-flex w-full justify-center rounded-lg bg-peach-300 text-forest-900 font-bold px-5 py-2.5 hover:bg-peach-200 transition">
+            Book an appointment
+          </a>
+        </div>
+      </nav>
     </div>
   </header>
 
@@ -368,12 +384,34 @@
   </section>
 
   <script>
+    // Feather icons
     feather.replace();
+
+    // Footer year
     document.getElementById("footerYear").textContent = new Date().getFullYear();
+
+    // Mobile menu toggle
+    const btn = document.getElementById("mobileMenuBtn");
+    const menu = document.getElementById("mobileMenu");
+
+    function setExpanded(isOpen) {
+      btn.setAttribute("aria-expanded", String(isOpen));
+    }
+
+    btn.addEventListener("click", () => {
+      const isHidden = menu.classList.contains("hidden");
+      menu.classList.toggle("hidden");
+      setExpanded(isHidden);
+    });
+
+    // Close the mobile menu after clicking a link (nice UX)
+    menu.querySelectorAll("a").forEach((a) => {
+      a.addEventListener("click", () => {
+        menu.classList.add("hidden");
+        setExpanded(false);
+      });
+    });
   </script>
 
 </body>
 </html>
-
-
-

@@ -38,13 +38,14 @@
   </script>
 
   <style>
+    html { scroll-behavior: smooth; }
     body { font-family: "Playfair Display", serif; }
   </style>
 </head>
 
-<body class="bg-forest-500 text-white antialiased">
+<body class="bg-forest-700 text-white antialiased">
 
-  <!-- NAV BAR (COPIED FROM FINAL HOME SCREEN) -->
+  <!-- NAV / HEADER -->
   <header class="sticky top-0 z-50 bg-forest-800/85 backdrop-blur border-b border-white/10">
     <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
@@ -55,7 +56,7 @@
         </span>
       </div>
 
-      <!-- Navigation (same font size for all items) -->
+      <!-- Desktop Navigation -->
       <nav class="hidden md:flex items-center gap-8 font-medium text-white/80 text-base">
         <a href="index.html" class="hover:text-white transition">About</a>
         <a href="surgery.html" class="hover:text-white transition">Surgery</a>
@@ -63,11 +64,43 @@
         <a href="location.html" class="hover:text-white transition">Contact</a>
       </nav>
 
-      <!-- CTA -->
-      <a href="contact.html"
-         class="rounded-lg bg-peach-300 text-forest-900 font-bold px-5 py-2.5 hover:bg-peach-200 transition">
-        Book an appointment
-      </a>
+      <!-- Right side: CTA (desktop) + Hamburger (mobile) -->
+      <div class="flex items-center gap-3">
+        <!-- CTA (hide on mobile so header doesn't get cramped) -->
+        <a href="contact.html"
+           class="hidden md:inline-flex rounded-lg bg-peach-300 text-forest-900 font-bold px-5 py-2.5 hover:bg-peach-200 transition">
+          Book an appointment
+        </a>
+
+        <!-- Hamburger (mobile) -->
+        <button
+          id="mobileMenuBtn"
+          class="md:hidden inline-flex items-center justify-center rounded-lg border border-white/15 bg-forest-900/25 px-3 py-2 hover:bg-forest-900/40 transition"
+          aria-label="Open menu"
+          aria-controls="mobileMenu"
+          aria-expanded="false"
+          type="button"
+        >
+          <i data-feather="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu (collapsible) -->
+    <div id="mobileMenu" class="md:hidden hidden border-t border-white/10 bg-forest-800/95">
+      <nav class="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-3 font-medium text-white/85 text-base">
+        <a href="index.html" class="hover:text-white transition py-1">About</a>
+        <a href="surgery.html" class="hover:text-white transition py-1">Surgery</a>
+        <a href="globalhealth.html" class="hover:text-white transition py-1">Global Health</a>
+        <a href="location.html" class="hover:text-white transition py-1">Contact</a>
+
+        <div class="pt-2">
+          <a href="contact.html"
+             class="inline-flex w-full justify-center rounded-lg bg-peach-300 text-forest-900 font-bold px-5 py-2.5 hover:bg-peach-200 transition">
+            Book an appointment
+          </a>
+        </div>
+      </nav>
     </div>
   </header>
 
@@ -91,7 +124,6 @@
             </p>
           </div>
 
-          <!-- NEW: Reader-friendly, APP-aligned content -->
           <h2 class="text-2xl font-semibold mt-8 mb-4 text-white">Collection of Personal Information</h2>
           <p class="text-white">
             The personal information we collect depends on how you use this website and our services. Any information collected is treated as confidential and handled in accordance with Australian privacy laws.
@@ -150,7 +182,7 @@
     </div>
   </section>
 
-  <!-- FOOTER (COPIED FROM FINAL HOME SCREEN) -->
+  <!-- FOOTER -->
   <section id="footer" class="w-full bg-black text-peach-300">
     <div class="max-w-7xl mx-auto px-6 py-14">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-14">
@@ -190,12 +222,37 @@
   </section>
 
   <script>
+    // Feather icons
     feather.replace();
+
+    // Footer year
+    document.getElementById("footerYear").textContent = new Date().getFullYear();
+
+    // Mobile menu toggle
+    const btn = document.getElementById("mobileMenuBtn");
+    const menu = document.getElementById("mobileMenu");
+
+    function setExpanded(isOpen) {
+      btn.setAttribute("aria-expanded", String(isOpen));
+    }
+
+    btn.addEventListener("click", () => {
+      const isHidden = menu.classList.contains("hidden");
+      menu.classList.toggle("hidden");
+      setExpanded(isHidden);
+    });
+
+    // Close the mobile menu after clicking a link (nice UX)
+    menu.querySelectorAll("a").forEach((a) => {
+      a.addEventListener("click", () => {
+        menu.classList.add("hidden");
+        setExpanded(false);
+      });
+    });
+
+    // Footer year (already set above, but safe if script loads twice)
     document.getElementById("footerYear").textContent = new Date().getFullYear();
   </script>
 
 </body>
 </html>
-
-
-
