@@ -327,16 +327,16 @@
           Book an appointment
         </a>
 
-        <!-- Hamburger (mobile) -->
+        <!-- Hamburger (mobile) - make icon WHITE -->
         <button
           id="mobileMenuBtn"
-          class="md:hidden inline-flex items-center justify-center rounded-lg border border-white/15 bg-forest-900/25 px-3 py-2 hover:bg-forest-900/40 transition"
+          class="md:hidden inline-flex items-center justify-center rounded-lg border border-white/15 bg-forest-900/25 px-3 py-2 hover:bg-forest-900/40 transition text-white"
           aria-label="Open menu"
           aria-controls="mobileMenu"
           aria-expanded="false"
           type="button"
         >
-          <i data-feather="menu" class="w-5 h-5"></i>
+          <i data-feather="menu" class="w-5 h-5 text-white"></i>
         </button>
       </div>
     </div>
@@ -367,12 +367,10 @@
 
       <div class="intro">
         <p>
-          <strong>Private</strong> consultations can be made with Dr Ben Sim by calling one of the locations below.
+          Private consultations can be made with Dr Ben Sim by calling one of the locations below.
         </p>
-        </p>
-         <p>
-       <p>
-          For <strong>public</strong> consultations please send your referral to the John Hunter Hospital Ophthalmology Clinic. Dr Ben Sim also operates on public patients at Kurri Kurri District hospital and Belmont Hospital which are teaching hospitals. While patients are not guaranteed a choice on their hospital location or the specific surgeon performing their procedure of their choice, all surgeries are conducted with utmost professionalism within a supervised training environment.
+        <p>
+          For public consultations please send your referral to the John Hunter Hospital Ophthalmology Clinic. Dr Ben Sim also operates on public patients at Kurri Kurri District hospital and Belmont Hospital which are teaching hospitals. While patients are not guaranteed a choice on their hospital location or the specific surgeon performing their procedure of their choice, all surgeries are conducted with utmost professionalism within a supervised training environment.
         </p>
       </div>
     </div>
@@ -504,6 +502,11 @@
   <script>
     // Feather icons
     feather.replace();
+
+    // Ensure the hamburger icon is white (Feather uses stroke=currentColor)
+    // This makes sure it stays white after feather.replace()
+    const hamburgerIcon = document.querySelector('#mobileMenuBtn svg');
+    if (hamburgerIcon) hamburgerIcon.style.stroke = '#fff';
 
     // Footer year
     document.getElementById("footerYear").textContent = new Date().getFullYear();
