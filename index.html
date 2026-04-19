@@ -1,15 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Specialist Ophthalmologist | Dr Ben Sim | Newcastle & Lake Macquarie</title>
-
-  <meta name="description" content="Dr Ben Sim is a specialist ophthalmologist providing cataract surgery and eye care in Newcastle and Lake Macquarie. Referrals welcome.">
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<link rel="canonical" href="https://www.drbensim.com.au/">
+  <title>Dr Ben Sim | Ophthalmologist</title>
 
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -44,13 +39,18 @@
   </script>
 
   <style>
-    html { scroll-behavior: smooth; }
-    body { font-family: "Playfair Display", serif; }
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Playfair Display", serif;
+    }
 
     /* HERO BACKGROUND */
     .hero-bg {
       background-image:
-        linear-gradient(to right, rgba(7,24,5,.72), rgba(7,24,5,.25)),
+        linear-gradient(to right, rgba(7, 24, 5, .72), rgba(7, 24, 5, .25)),
         url("https://images.unsplash.com/photo-1486649567693-aaa9b2e59385?q=80&w=1470&auto=format&fit=crop");
       background-size: cover;
       background-position: center;
@@ -59,38 +59,44 @@
     /* ABOUT BACKGROUND */
     .about-eye-bg {
       background-image:
-        linear-gradient(to bottom, rgba(20,54,16,.85), rgba(20,54,16,.25)),
+        linear-gradient(to bottom, rgba(20, 54, 16, .85), rgba(20, 54, 16, .25)),
         url("https://images.unsplash.com/photo-1565230698474-2a8a500c35cb?q=80&w=2400&auto=format&fit=crop");
       background-size: cover;
       background-position: center;
     }
 
     /* Smooth background transition between sections */
-    .section-fade-bottom { position: relative; }
+    .section-fade-bottom {
+      position: relative;
+    }
+
     .section-fade-bottom::after {
       content: "";
       position: absolute;
-      left: 0; right: 0; bottom: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
       height: 140px;
-      background: linear-gradient(
-        to bottom,
-        rgba(7,24,5,0) 0%,
-        rgba(7,24,5,0.85) 100%
-      );
+      background: linear-gradient(to bottom,
+          rgba(7, 24, 5, 0) 0%,
+          rgba(7, 24, 5, 0.85) 100%);
       pointer-events: none;
     }
 
-    .section-fade-top { position: relative; }
+    .section-fade-top {
+      position: relative;
+    }
+
     .section-fade-top::before {
       content: "";
       position: absolute;
-      left: 0; right: 0; top: 0;
+      left: 0;
+      right: 0;
+      top: 0;
       height: 140px;
-      background: linear-gradient(
-        to top,
-        rgba(7,24,5,0) 0%,
-        rgba(7,24,5,0.85) 100%
-      );
+      background: linear-gradient(to top,
+          rgba(7, 24, 5, 0) 0%,
+          rgba(7, 24, 5, 0.85) 100%);
       pointer-events: none;
     }
 
@@ -102,6 +108,7 @@
       align-items: center;
       justify-content: center;
     }
+
     .logo-item img {
       max-width: 85%;
       max-height: 100%;
@@ -110,14 +117,20 @@
       opacity: 0.92;
       transition: filter .25s ease, opacity .25s ease, transform .25s ease;
     }
+
     .logo-item img:hover {
       filter: brightness(0.95) saturate(1) contrast(1);
       opacity: 1;
     }
 
     /* Default: hide both logo groups until media rules enable them */
-    .logos-desktop { display: none; }
-    .mobile-logos { display: none; }
+    .logos-desktop {
+      display: none;
+    }
+
+    .mobile-logos {
+      display: none;
+    }
 
     /* DESKTOP (>= 1024px): FORCE fixed logo column width + FORCE fixed logo box size + fixed equal gaps */
     @media (min-width: 1024px) {
@@ -164,7 +177,7 @@
         flex-wrap: nowrap;
 
         background: rgba(7, 24, 5, 0.30);
-        border: 1px solid rgba(255,255,255,0.12);
+        border: 1px solid rgba(255, 255, 255, 0.12);
         border-radius: 16px;
         padding: 10px 12px;
       }
@@ -184,16 +197,6 @@
       }
     }
   </style>
-
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZKNK1K2V9S"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-ZKNK1K2V9S');
-</script>
 </head>
 
 <body class="bg-forest-700 text-white antialiased">
@@ -221,7 +224,7 @@
       <div class="flex items-center gap-3">
         <!-- CTA (hide on mobile so header doesn't get cramped) -->
         <a href="#footer"
-           class="hidden md:inline-flex rounded-lg bg-peach-300 text-forest-900 font-bold px-5 py-2.5 hover:bg-peach-200 transition">
+          class="hidden md:inline-flex rounded-lg bg-peach-300 text-forest-900 font-bold px-5 py-2.5 hover:bg-peach-200 transition">
           Book an appointment
         </a>
 
@@ -249,7 +252,7 @@
 
         <div class="pt-2">
           <a href="#footer"
-             class="inline-flex w-full justify-center rounded-lg bg-peach-300 text-forest-900 font-bold px-5 py-2.5 hover:bg-peach-200 transition">
+            class="inline-flex w-full justify-center rounded-lg bg-peach-300 text-forest-900 font-bold px-5 py-2.5 hover:bg-peach-200 transition">
             Book an appointment
           </a>
         </div>
@@ -283,7 +286,8 @@
           <p class="mb-6"></p>
 
           <p class="mb-6">
-            Dr Ben Sim is an Australian and UK trained Ophthalmologist with special interest in cataract, oculoplastics & reconstructive surgery practicing
+            Dr Ben Sim is an Australian and UK trained Ophthalmologist with special interest in cataract, oculoplastics
+            & reconstructive surgery practicing
             <strong>full time exclusively in the Hunter/ Newcastle Region</strong>.
           </p>
 
@@ -297,17 +301,20 @@
           </p>
 
           <p class="mb-6">
-            Dr Sim has a <strong>Masters in Public Health</strong> from University of Sydney and completed his Ophthalmology training at
+            Dr Sim has a <strong>Masters in Public Health</strong> from University of Sydney and completed his
+            Ophthalmology training at
             <strong>Sydney Eye Hospital</strong>.
             He then pursued 2 years of Oculoplastics subspecialization at
             <strong>King’s College Hospital, London</strong> and
             <strong>Bristol Eye Hospital</strong>
-            in the United Kingdom where he further developed his surgical skills in a wide range of procedures treating periocular skin cancers, lacrimal and eyelid disease.
+            in the United Kingdom where he further developed his surgical skills in a wide range of procedures treating
+            periocular skin cancers, lacrimal and eyelid disease.
           </p>
 
           <p class="mb-6">
             What Dr Sim is most passionate about is understanding the delivery of eyecare around the world.
-            He has worked with the <strong>Fred Hollows Foundation</strong> in Nepal and Alice Springs to gain insight into the delivery of ophthalmology services to Indigenous Australians.
+            He has worked with the <strong>Fred Hollows Foundation</strong> in Nepal and Alice Springs to gain insight
+            into the delivery of ophthalmology services to Indigenous Australians.
             He has subsequently both worked, volunteered and observed eyecare delivery in
             <strong>6 continents</strong> and just under
             <strong>30 different countries</strong>
@@ -368,10 +375,7 @@
         <div>
           <h3 class="font-bold mb-4">LOCATIONS</h3>
           <ul class="space-y-1">
-            <li>Warners Bay</li>
-            <li>Maitland</li>
             <li>Charlestown</li>
-            <li>Hamilton</li>
           </ul>
         </div>
 
@@ -382,7 +386,7 @@
           </p>
 
           <a href="location.html"
-             class="inline-block mt-4 rounded-lg bg-peach-300 text-forest-900 font-bold px-6 py-3 hover:bg-peach-200 transition">
+            class="inline-block mt-4 rounded-lg bg-peach-300 text-forest-900 font-bold px-6 py-3 hover:bg-peach-200 transition">
             Book an appointment ›
           </a>
         </div>
@@ -430,6 +434,5 @@
   </script>
 
 </body>
+
 </html>
-
-
