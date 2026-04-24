@@ -61,7 +61,7 @@
 
     body {
       margin: 0;
-      font-family: Montserrat, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-family: Arial, sans-serif;
       line-height: 1.65;
       color: #111;
       background: #fff;
@@ -114,7 +114,7 @@
       font-size: 2.8rem;
       margin: 0 0 14px;
       letter-spacing: -0.3px;
-      font-family: "Playfair Display", serif;
+      font-family: Arial, sans-serif;
     }
 
     .contact-hero .intro {
@@ -180,7 +180,7 @@
       font-size: 1.5rem;
       margin: 0 0 22px;
       color: #fff;
-      font-family: "Playfair Display", serif;
+      font-family: Arial, sans-serif;
     }
 
     .contact-list {
@@ -200,7 +200,7 @@
       display: block;
       font-size: 1.1rem;
       margin-bottom: 6px;
-      font-family: "Playfair Display", serif;
+      font-family: Arial, sans-serif;
     }
 
     .contact-card .address {
@@ -261,7 +261,7 @@
       letter-spacing: 1px;
       color: var(--forest-dark);
       margin-bottom: 14px;
-      font-family: "Playfair Display", serif;
+      font-family: Arial, sans-serif;
     }
 
     .clinic-btn {
@@ -277,7 +277,7 @@
       color: var(--forest-dark);
       margin-bottom: 10px;
       line-height: 1.35;
-      font-family: Montserrat, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-family: Arial, sans-serif;
     }
 
     .clinic-btn small {
@@ -419,7 +419,7 @@
           <strong>Charlestown - Hunter Ophthalmology</strong>
           <div class="address">Suite 4A, 250 Pacific Highway, Charlestown, NSW, 2290</div>
           <div class="meta">
-            <a href="tel:0240034881">-</a><br>
+            <a href="tel:0240034881"> (02) 4106 9999</a><br>
             <a href="mailto:info@ophthalmicassociates.com.au">reception@hunterophthalmology.com.au</a>
           </div>
         </div>
@@ -446,81 +446,44 @@
     </div>
   </section>
 
-  <!-- FOOTER (COPIED FROM FINAL HOME SCREEN) -->
-  <section id="footer" class="w-full bg-black text-peach-300">
-    <div class="max-w-7xl mx-auto px-6 py-14">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-14">
-        <div>
-          <h3 class="font-bold mb-4">LOCATIONS</h3>
-          <ul class="space-y-1">
-            <li>Charlestown</li>
-          </ul>
-        </div>
+<!-- FOOTER -->
+<section id="footer" class="w-full bg-black text-peach-300">
+  <div class="max-w-7xl mx-auto px-6 py-14">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-14">
 
-        <div>
-          <h3 class="font-bold mb-4">APPOINTMENTS</h3>
-          <p class="max-w-sm">
-            You may book an appointment with Dr Sim by calling a location convenient to you.
-          </p>
-          <a href="location.html"
-            class="inline-block mt-4 rounded-lg bg-peach-300 text-forest-900 font-bold px-6 py-3 hover:bg-peach-200 transition">
-            Book an appointment ›
-          </a>
-        </div>
+      <div>
+        <h3 class="font-bold mb-4">LOCATION</h3>
+        <ul class="space-y-1">
+          <li>Suite 4A, 250 Pacific Highway, Charlestown, NSW 2290</li>
+        </ul>
       </div>
-    </div>
 
-    <div class="border-t border-peach-300/30">
-      <div class="max-w-7xl mx-auto px-6 py-4 text-sm text-peach-300/80">
-        © <span id="footerYear"></span> Dr Ben Sim |
-        <a href="privacypolicy.html" class="hover:underline">Privacy Policy</a> |
-        <a href="disclaimer.html" class="hover:underline">Disclaimer</a>
+      <div>
+        <h3 class="font-bold mb-4">APPOINTMENTS</h3>
+        <p class="max-w-sm">
+          You may book an appointment with Dr Ben Sim at
+          <a href="mailto:reception@hunterophthalmology.com.au" class="hover:underline">
+            reception@hunterophthalmology.com.au
+          </a><br>
+          (02) 4106 9999
+        </p>
+
+        <a href="location.html"
+          class="inline-block mt-4 rounded-lg bg-peach-300 text-forest-900 font-bold px-6 py-3 hover:bg-peach-200 transition">
+          Book an appointment ›
+        </a>
       </div>
+
     </div>
-  </section>
+  </div>
 
-  <script>
-    // Feather icons
-    feather.replace();
-
-    // Ensure the hamburger icon is white (Feather uses stroke=currentColor)
-    // This makes sure it stays white after feather.replace()
-    const hamburgerIcon = document.querySelector('#mobileMenuBtn svg');
-    if (hamburgerIcon) hamburgerIcon.style.stroke = '#fff';
-
-    // Footer year
-    document.getElementById("footerYear").textContent = new Date().getFullYear();
-
-    // Map switcher (desktop/tablet only; map is hidden on mobile)
-    function setMap(address, btn){
-      const frame = document.getElementById("mapFrame");
-      frame.src = "https://www.google.com/maps?q=" + encodeURIComponent(address) + "&output=embed";
-      document.querySelectorAll(".clinic-btn").forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-    }
-
-    // Mobile menu toggle
-    const btn = document.getElementById("mobileMenuBtn");
-    const menu = document.getElementById("mobileMenu");
-
-    function setExpanded(isOpen) {
-      btn.setAttribute("aria-expanded", String(isOpen));
-    }
-
-    btn.addEventListener("click", () => {
-      const isHidden = menu.classList.contains("hidden");
-      menu.classList.toggle("hidden");
-      setExpanded(isHidden);
-    });
-
-    // Close the mobile menu after clicking a link
-    menu.querySelectorAll("a").forEach((a) => {
-      a.addEventListener("click", () => {
-        menu.classList.add("hidden");
-        setExpanded(false);
-      });
-    });
-  </script>
-</body>
+  <div class="border-t border-peach-300/30">
+    <div class="max-w-7xl mx-auto px-6 py-4 text-sm text-peach-300/80">
+      © <span id="footerYear"></span> Dr Ben Sim |
+      <a href="privacypolicy.html" class="hover:underline">Privacy Policy</a> |
+      <a href="disclaimer.html" class="hover:underline">Disclaimer</a>
+    </div>
+  </div>
+</section>
 
 </html>
