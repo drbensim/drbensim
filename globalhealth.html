@@ -44,7 +44,7 @@
     }
 
     body {
-      font-family: "Playfair Display", serif;
+      font-family: Arial, sans-serif;
     }
 
     /* PAGE BACKGROUND */
@@ -126,78 +126,50 @@
       <div class="max-w-3xl bg-forest-900/55 backdrop-blur-sm rounded-2xl p-10 ring-1 ring-white/15">
         <h1 class="text-5xl md:text-6xl font-light">Under Construction</h1>
         <p class="mt-4 text-white/75 text-lg">
-          This page is being built — please check back soon.
+          This page is currently being built — please check in back soon!
         </p>
       </div>
     </div>
   </main>
 
-  <!-- FOOTER -->
-  <section id="footer" class="w-full bg-black text-peach-300">
-    <div class="max-w-7xl mx-auto px-6 py-14">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-14">
+<!-- FOOTER -->
+<section id="footer" class="w-full bg-black text-peach-300">
+  <div class="max-w-7xl mx-auto px-6 py-14">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-14">
 
-        <div>
-          <h3 class="font-bold mb-4">LOCATIONS</h3>
-          <ul class="space-y-1">
-            <li>Charlestown</li>
-          </ul>
-        </div>
-
-        <div>
-          <h3 class="font-bold mb-4">APPOINTMENTS</h3>
-          <p class="max-w-sm">
-            You may book an appointment with Dr Sim by calling a location convenient to you.
-          </p>
-
-          <a href="location.html"
-            class="inline-block mt-4 rounded-lg bg-peach-300 text-forest-900 font-bold px-6 py-3 hover:bg-peach-200 transition">
-            Book an appointment ›
-          </a>
-        </div>
-
+      <div>
+        <h3 class="font-bold mb-4">LOCATION</h3>
+        <ul class="space-y-1">
+          <li>Suite 4A, 250 Pacific Highway, Charlestown, NSW 2290</li>
+        </ul>
       </div>
-    </div>
 
-    <div class="border-t border-peach-300/30">
-      <div class="max-w-7xl mx-auto px-6 py-4 text-sm text-peach-300/80">
-        © <span id="footerYear"></span> Dr Ben Sim |
-        <a href="privacypolicy.html" class="hover:underline">Privacy Policy</a> |
-        <a href="disclaimer.html" class="hover:underline">Disclaimer</a>
+      <div>
+        <h3 class="font-bold mb-4">APPOINTMENTS</h3>
+        <p class="max-w-sm">
+          You may book an appointment with Dr Ben Sim at
+          <a href="mailto:reception@hunterophthalmology.com.au" class="hover:underline">
+            reception@hunterophthalmology.com.au
+          </a><br>
+          (02) 4106 9999
+        </p>
+
+        <a href="location.html"
+          class="inline-block mt-4 rounded-lg bg-peach-300 text-forest-900 font-bold px-6 py-3 hover:bg-peach-200 transition">
+          Book an appointment ›
+        </a>
       </div>
+
     </div>
-  </section>
+  </div>
 
-  <script>
-    // Feather icons
-    feather.replace();
-
-    // Footer year
-    document.getElementById("footerYear").textContent = new Date().getFullYear();
-
-    // Mobile menu toggle
-    const btn = document.getElementById("mobileMenuBtn");
-    const menu = document.getElementById("mobileMenu");
-
-    function setExpanded(isOpen) {
-      btn.setAttribute("aria-expanded", String(isOpen));
-    }
-
-    btn.addEventListener("click", () => {
-      const isHidden = menu.classList.contains("hidden");
-      menu.classList.toggle("hidden");
-      setExpanded(isHidden);
-    });
-
-    // Close the mobile menu after clicking a link (nice UX)
-    menu.querySelectorAll("a").forEach((a) => {
-      a.addEventListener("click", () => {
-        menu.classList.add("hidden");
-        setExpanded(false);
-      });
-    });
-  </script>
-
-</body>
+  <div class="border-t border-peach-300/30">
+    <div class="max-w-7xl mx-auto px-6 py-4 text-sm text-peach-300/80">
+      © <span id="footerYear"></span> Dr Ben Sim |
+      <a href="privacypolicy.html" class="hover:underline">Privacy Policy</a> |
+      <a href="disclaimer.html" class="hover:underline">Disclaimer</a>
+    </div>
+  </div>
+</section>
 
 </html>
